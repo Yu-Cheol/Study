@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.login-container {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    margin:0px;
+    
+}
+
+.login-main{
+    display: table;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 60px 30px;
+    text-align: center;
+    border:none;
+    height:100%;
+	vertical-align:middle;
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* 전체에 박스사이징 */
+    outline: none; /* focus 했을때 테두리 나오게 */
+}
+
+.login_btn{
+    background-color: #000000;
+    color: #fff;
+    padding: 12px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.login_btn:hover {
+    background-color: #666;
+}
+
+.options a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.social-login p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.social-login button {
+    width: calc(50% - 5px);
+    margin: 5px 5px;
+    padding: 12px 0;
+}
+
+.guest-order {
+    margin: 20px 0px 30px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.guest-order a {
+    color: #000000;
+    text-decoration: none;
+    padding: 0px 15px;
+    
+}
+
+.guest-order a:hover {
+    text-decoration: underline;
+}
