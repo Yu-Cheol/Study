@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="shop">
+
+    <insert id="join">
+        insert into MJOIN (M_ID, M_PWD, M_PWDC, M_EMAIL, M_NAME, M_DAY, M_PHONE, M_STATE, M_DATE)
+        VALUES (#{m_id}, #{m_pwd}, #{m_pwdC}, #{m_email}, #{m_name}, #{m_day}, #{m_phone}, 1, sysdate)
+    </insert>
+
+    <select id="login" resultType="shop">
+        select * from MJOIN where M_ID=#{m_id} and M_STATE = 1
+    </select>
+</mapper>
