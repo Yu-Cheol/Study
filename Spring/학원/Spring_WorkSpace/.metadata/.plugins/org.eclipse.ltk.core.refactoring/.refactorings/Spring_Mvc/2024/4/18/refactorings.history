@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Spring_Mvc/src/main/resources/net/daum/mappers/mybatis/Message.xml&apos; to &apos;message.xml&apos;" description="Rename resource &apos;Message.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/net/daum/mappers/mybatis/Message.xml" name="message.xml" stamp="1714454778712" updateReferences="true"/>
+</session>

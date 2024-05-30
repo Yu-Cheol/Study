@@ -1,0 +1,17 @@
+package net.daum.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import net.daum.service.GongjiService;
+
+@RequestMapping("/gongji/**") //경로 구분하기 위해서 컨트롤러 자체 매핑주소 등록
+@Controller
+public class GongjiController {
+
+	@Autowired
+	private GongjiService gongjiService;
+	
+	
+}

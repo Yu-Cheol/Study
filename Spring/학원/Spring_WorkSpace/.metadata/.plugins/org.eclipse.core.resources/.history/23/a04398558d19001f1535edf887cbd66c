@@ -1,0 +1,27 @@
+package net.daum.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import net.daum.vo.GongjiVO;
+import net.daum.vo.PageVO;
+
+@Repository
+public class AdminGongjiDAOImpl implements AdminGongjiDAO {
+
+	@Autowired
+	private SqlSession sqlSession;
+
+	@Override
+	public int getListCount(PageVO p) {		
+		return this.sqlSession.selectOne("ag_count", p);
+	}//검색전후 레코드 개수	
+
+	@Override
+	public List<GongjiVO> getGongjiList(PageVO p) {
+		return this.sqlSession.selectList("ag_list", p);
+	}//관리자 공지 검색전후 목록
+}

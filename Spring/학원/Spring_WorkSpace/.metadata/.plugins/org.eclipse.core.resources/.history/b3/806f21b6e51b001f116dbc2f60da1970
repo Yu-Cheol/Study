@@ -1,0 +1,31 @@
+package net.daum.dao;
+
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import net.daum.vo.GongjiVO;
+
+@Repository
+public class GongjiDAOImpl implements GongjiDAO {
+
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+
+	@Override
+	public List<GongjiVO> getGongjiList() {
+		return this.sqlSession.selectList("g_list");
+	}//최신 공지글 5개 목록보기
+
+	@Override
+	public void updateHit(int gongji_no) {
+		this.sqlSession.update("g_hit", gongji_no);		
+	}//조회수 증가
+
+	@Override
+	public GongjiVO getGongjiCont(int gongji_no) {
+		return this.sqlSession.selectOne("g_cont", gongji_no);
+	}//내용보기
+}

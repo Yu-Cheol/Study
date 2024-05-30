@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;pwd_find_ok.jsp&apos; to &apos;member&apos;&#x0D;&#x0A;- Original project: &apos;boot06_JPA_security&apos;&#x0D;&#x0A;- Destination element: &apos;member&apos;&#x0D;&#x0A;- Original element: &apos;pwd_find_ok.jsp&apos;" description="Copy file" element1="src/main/webapp/WEB-INF/views/member/pwd_find_ok.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1716180468083" target="/SpringBoot_Project/src/main/webapp/WEB-INF/views/member" units="0" version="1.0"/>
+</session>

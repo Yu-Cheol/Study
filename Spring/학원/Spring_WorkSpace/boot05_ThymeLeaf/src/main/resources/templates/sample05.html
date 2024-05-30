@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<title>Thymeleaf 05</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+</head>
+<body>
+
+<script th:inline="javascript"> 
+/*th:inline="javascript" 속성을 사용하면 자바스크립트 내에서 타임
+리프 문법을 사용할 수 있다. */
+  var data = [[${result}]];
+  document.write("타임리트 가져온값:"+data+"<hr>");
+</script>
+
+<script>
+ var data = [[${result}]];
+  //웹브라우저 출력결과물 페이지 소스에서 보면 문자열값 SUCCESS가 마치 자바스크립트 변수처럼 사용된다
+  //결국 th:inline속성을 사용하지 않아서 자바스크립트 코드 내에서 타임리프 문법 사용이 제한된다.
+</script>
+</body>
+</html>

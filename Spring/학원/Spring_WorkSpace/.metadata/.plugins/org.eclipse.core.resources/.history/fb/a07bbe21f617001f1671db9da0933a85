@@ -1,0 +1,15 @@
+package net.daum.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import net.daum.dao.AdminMemberDAO;
+
+@Service //@Service 애노테이션을 설정하면 스프링에서 서비스로 인식한다.
+public class AdminMemberServiceImpl implements AdminMemberService {
+
+	@Autowired
+	private AdminMemberDAO adminMemberDao;
+	
+	
+}

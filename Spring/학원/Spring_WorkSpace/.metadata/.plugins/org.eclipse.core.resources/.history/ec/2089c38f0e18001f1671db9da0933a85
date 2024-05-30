@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminMember"> 
+
+   <!-- 검색전후 회원수 -->
+   <select id="am_count" parameterType="page" resultType="int">
+      select count(mem_id) from member
+      <where>
+        <if test="find_field == ''"></if> <!-- 전체회원수 -->
+        <if test="find_field == 'mem_id'"> <!-- 회원아이디로 검색할 때 -->
+         mem_id like #{find_name}
+        </if>
+        <if test="find_field == 'mem_name'"> <!-- 회원이름으로 검색할 때 -->
+         mem_name like #{find_name}        
+        </if>
+      </where>
+   </select>
+   
+   <!-- 검색전후 회원목록 -->
+   <select id="am_list" parameterType="page" resultType="member">
+      select * from (select rowNum rNum, mem_id, mem_name,mem_phone01, mem_phone02, mem_phone03
+      ,mem_state,mem_date from 
+      (select * from member
+      <where>
+        <if test="find_field == ''"></if> <!-- 전체회원수 -->
+        <if test="find_field == 'mem_id'"> <!-- 회원아이디로 검색할 때 -->
+         mem_id like #{find_name}
+        </if>
+        <if test="find_field == 'mem_name'"> <!-- 회원이름으로 검색할 때 -->
+         mem_name like #{find_name}        
+        </if>
+       </where> 
+      order by mem_id asc))
+      where rNum &gt;= #{startrow} and rNum &lt;= #{endrow}
+      <!-- &gt;은 >, &lt;은 < -->
+   </select>
+   
+</mapper>
+
+
+
+
+
+
+
+
+

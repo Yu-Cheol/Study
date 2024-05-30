@@ -1,0 +1,13 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ include file="../include/admin_header.jsp" %>
+
+<div id="aMain_cont">
+ <div id="aBc_wrap">
+  <h2 class="aBc_title">관리자 공지내용</h2>
+  <table id="aBc_t">
+  <tr>
+    <th>공지제목</th> <td>${gc.gongji_title}</td>
+  </tr>  
+  </table>
+ </div>
+</div>

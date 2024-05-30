@@ -1,0 +1,15 @@
+package net.daum.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import net.daum.service.AdminMemberService;
+
+@Controller
+public class AdminMemberController {
+
+	@Autowired
+	private AdminMemberService adminMemberService;
+	
+	
+}

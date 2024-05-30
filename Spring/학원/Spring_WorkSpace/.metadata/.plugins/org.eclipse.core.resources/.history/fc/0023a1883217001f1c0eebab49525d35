@@ -1,0 +1,19 @@
+package net.daum.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import net.daum.vo.MemberVO;
+
+public interface MemberRepository extends JpaRepository<MemberVO, String> {
+
+	@Query("select m from MemberVO m where m.mem_id=?1 and m.mem_name=?2")
+	public MemberVO pwdFind(String id,String name);//?2는 두번째로 전달되어지는 인자값, 아이디와 회원이름을 기준
+	//으로 비번을 검색
+	
+	@Modifying //@Query 애노테이션은 select문만 가능하지만 @Modifying을 이용해서 DML(update,insert,delete)
+	//문 작업 처리가 가능하다.
+	@Query("update MemberVO m set m.mem_pwd=?1 where m.mem_id=?2")
+	public void updatePwd(String pwd,String id); //아이디를 기준으로 암호화된 임시비번으로 수정
+}

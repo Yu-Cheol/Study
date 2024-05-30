@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<title>Thymeleaf 04 </title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" >
+</head>
+<body>
+
+ <table border="1" th:with="target='u0001'">
+  <!-- th:with 타임리프를 사용해서 특정 범위 내에서만 유효한 지역변수를 선언할 수 있다.
+  target이라는 지역변수는 table태그 내에서만 유효하다. -->
+  <tr>
+   <th>회원아이디</th> <th>회원이름</th> <th>가입날짜</th>
+  </tr>
+  
+  <tr th:each="member : ${list}">
+    <td th:text="${member.mid == target ? 'SECRET' : member.mid}"></td>
+                 <!-- 삼항 조건연사자 -->
+    <td th:text="${member.mname}"></td>
+    <td th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></td>                 
+  </tr>
+ </table>
+ 
+ <hr>
+ 
+ <table border="1" th:with="target2='u0001'">
+   <tr>
+    <th>회원아이디</th> <th>회원이름</th> <th>가입날짜
+   </tr> 
+   
+   <tr th:each="member : ${list}">
+     <td th:if="${member.mid}">
+       <a href="/modify" th:if="${member.mid == target2}">modify</a>
+       <!-- th:if ~ th:unless 타임리프는 자바언어의 if~else문과 같은 기능을 한다. -->
+       <p th:unless="${member.mid == target2}">view</p>
+       <!--  회원아이디가 'u0001'과 다르다면 실행 -->
+     </td>
+     <td th:text="${member.mname}"></td>
+     <td th:text="${#dates.format(member.regdate, 'yyyy-MM-dd')}"></td>
+   </tr>
+ </table>
+ 
+</body>
+</html>
+
+
+
+
+
+

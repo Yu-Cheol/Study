@@ -1,0 +1,57 @@
+package net.daum.controller;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import net.daum.service.AdminGongjiService;
+import net.daum.vo.PageVO;
+
+@Controller
+public class AdminGongjiController {
+
+	@Autowired
+	private AdminGongjiService adminGongjiService;
+	
+	//관리자 공지목록
+	@GetMapping("/admin_gongji_list")
+	public ModelAndView admin_gongji_list(PageVO p,HttpServletRequest request,
+			HttpServletResponse response,HttpSession session){
+		response.setContentType("text/html;charset=UTF-8");
+		
+		if(isLogin(session, response)) {
+			
+		}
+		return null;
+	}//admin_gongji_list()
+	
+	//관리자 로그아웃 되었을 때 처리하는 부분
+	public static boolean isLogin(HttpSession session,HttpServletResponse response)
+			throws Exception{
+		PrintWriter out=response.getWriter();
+		String admin_id=(String)session.getAttribute("admin_id");//관리자 세션 아이디값을 구함
+
+		if(admin_id == null) {
+			out.println("<script>");
+			out.println("alert('관리자로 다시 로그인 하세요!');");
+			out.println("location='admin_Login';");
+			out.println("</script>");
+
+			return false;
+		}
+		return true;
+	}//isLogin()
+}
+
+
+
+
+
+
