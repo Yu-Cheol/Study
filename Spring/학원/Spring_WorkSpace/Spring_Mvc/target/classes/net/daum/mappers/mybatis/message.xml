@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Message">
+
+  <!-- 메시지 추가 -->
+  <insert id="message_in" parameterType="net.daum.vo.MessageVO">
+    insert into tbl_message (mid,targetid,sender,message,senddate)
+    values(mid_no_seq.nextval, #{targetid}, #{sender}, #{message}, 
+    sysdate)
+  </insert>
+ 
+  <!-- 
+    문제)arc 즉 advanced Rest Client에서 실행하여 user00 보낸사람에게 메시지가 추가되고,
+    포인트 점수 10점 업데이트 되게 수행해 보자.
+   -->
+
+</mapper>
