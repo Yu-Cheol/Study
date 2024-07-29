@@ -1,9 +1,0 @@
-package net.daum.service;
-
-import net.daum.vo.PageVO;
-
-public interface AdminMemberService {
-
-	int getRowCount(PageVO p);
-
-}

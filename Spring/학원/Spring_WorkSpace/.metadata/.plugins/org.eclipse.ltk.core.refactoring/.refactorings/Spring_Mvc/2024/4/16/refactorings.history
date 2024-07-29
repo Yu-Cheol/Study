@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;SampleController.java&apos; to &apos;Spring_Mvc/src/main/java/net.daum.controller&apos;&#x0D;&#x0A;- Original project: &apos;Spring_Mvc&apos;&#x0D;&#x0A;- Destination element: &apos;Spring_Mvc/src/main/java/net.daum.controller&apos;&#x0D;&#x0A;- Original element: &apos;net.daum.SampleController.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum.controller" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;net.daum{SampleController.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1713503264849" units="1" version="1.0"/>
-</session>
